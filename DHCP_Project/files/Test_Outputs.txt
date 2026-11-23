@@ -1,0 +1,412 @@
+======================================================================
+Test 1 - IP address available
+======================================================================
+==========================================
+   DHCP PROTOCOL SIMULATION USING C++
+==========================================
+DHCP server started. Address pool: 192.168.1.10 - 192.168.1.13
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 1
+>>> Test case 1: the pool is empty, so an IP is available.
+
+[PC1] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:01:01)
+[Server] DHCP OFFER     -> 192.168.1.10
+[PC1] DHCP REQUEST   for 192.168.1.10
+[Server] DHCP ACK       -> lease confirmed
+[PC1] SUCCESS, allocated IP = 192.168.1.10
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 0
+Simulation finished. Goodbye!
+
+
+======================================================================
+Test 2 - No IP address available (pool exhausted)
+======================================================================
+==========================================
+   DHCP PROTOCOL SIMULATION USING C++
+==========================================
+DHCP server started. Address pool: 192.168.1.10 - 192.168.1.13
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 2
+>>> Test case 2: first 4 PCs take every address...
+    Pool is now full. A new PC joins:
+
+[PC5] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:05:01)
+[Server] No free address in the pool -> no OFFER sent
+[PC5] IP allocation FAILED
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 4
+
+---------------- NETWORK STATUS ----------------
+PC      MAC                 IP address
+PC1     AA:BB:CC:00:01:01   192.168.1.10
+PC2     AA:BB:CC:00:02:01   192.168.1.11
+PC3     AA:BB:CC:00:03:01   192.168.1.12
+PC4     AA:BB:CC:00:04:01   192.168.1.13
+PC5     AA:BB:CC:00:05:01   Not Assigned
+
+Pool: 0 free / 4 total
+  192.168.1.10  USED by AA:BB:CC:00:01:01
+  192.168.1.11  USED by AA:BB:CC:00:02:01
+  192.168.1.12  USED by AA:BB:CC:00:03:01
+  192.168.1.13  USED by AA:BB:CC:00:04:01
+------------------------------------------------
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 0
+Simulation finished. Goodbye!
+
+
+======================================================================
+Test 3 - Invalid inputs (9, abc, empty line, -1, 7)
+======================================================================
+==========================================
+   DHCP PROTOCOL SIMULATION USING C++
+==========================================
+DHCP server started. Address pool: 192.168.1.10 - 192.168.1.13
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 9
+Invalid choice! Please enter a number from the menu (0-5).
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: abc
+Invalid choice! Please enter a number from the menu (0-5).
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 
+Invalid choice! Please enter a number from the menu (0-5).
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: -1
+Invalid choice! Please enter a number from the menu (0-5).
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 7
+Invalid choice! Please enter a number from the menu (0-5).
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 0
+Simulation finished. Goodbye!
+
+
+======================================================================
+Test 4 - Manual scenario: connect 5 PCs, release PC1 and PC2, release a wrong PC, reconnect
+======================================================================
+==========================================
+   DHCP PROTOCOL SIMULATION USING C++
+==========================================
+DHCP server started. Address pool: 192.168.1.10 - 192.168.1.13
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 3
+[PC1] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:01:01)
+[Server] DHCP OFFER     -> 192.168.1.10
+[PC1] DHCP REQUEST   for 192.168.1.10
+[Server] DHCP ACK       -> lease confirmed
+[PC1] SUCCESS, allocated IP = 192.168.1.10
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 3
+[PC2] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:02:01)
+[Server] DHCP OFFER     -> 192.168.1.11
+[PC2] DHCP REQUEST   for 192.168.1.11
+[Server] DHCP ACK       -> lease confirmed
+[PC2] SUCCESS, allocated IP = 192.168.1.11
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 3
+[PC3] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:03:01)
+[Server] DHCP OFFER     -> 192.168.1.12
+[PC3] DHCP REQUEST   for 192.168.1.12
+[Server] DHCP ACK       -> lease confirmed
+[PC3] SUCCESS, allocated IP = 192.168.1.12
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 3
+[PC4] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:04:01)
+[Server] DHCP OFFER     -> 192.168.1.13
+[PC4] DHCP REQUEST   for 192.168.1.13
+[Server] DHCP ACK       -> lease confirmed
+[PC4] SUCCESS, allocated IP = 192.168.1.13
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 3
+[PC5] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:05:01)
+[Server] No free address in the pool -> no OFFER sent
+[PC5] IP allocation FAILED
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 4
+
+---------------- NETWORK STATUS ----------------
+PC      MAC                 IP address
+PC1     AA:BB:CC:00:01:01   192.168.1.10
+PC2     AA:BB:CC:00:02:01   192.168.1.11
+PC3     AA:BB:CC:00:03:01   192.168.1.12
+PC4     AA:BB:CC:00:04:01   192.168.1.13
+PC5     AA:BB:CC:00:05:01   Not Assigned
+
+Pool: 0 free / 4 total
+  192.168.1.10  USED by AA:BB:CC:00:01:01
+  192.168.1.11  USED by AA:BB:CC:00:02:01
+  192.168.1.12  USED by AA:BB:CC:00:03:01
+  192.168.1.13  USED by AA:BB:CC:00:04:01
+------------------------------------------------
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 5
+Enter the PC number to disconnect: 1
+[PC1] DHCP RELEASE -> 192.168.1.10 is free again
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 5
+Enter the PC number to disconnect: 2
+[PC2] DHCP RELEASE -> 192.168.1.11 is free again
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 5
+Enter the PC number to disconnect: 9
+PC9 does not exist or has no IP address.
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 3
+[PC6] DHCP DISCOVER  (broadcast, MAC AA:BB:CC:00:06:01)
+[Server] DHCP OFFER     -> 192.168.1.10
+[PC6] DHCP REQUEST   for 192.168.1.10
+[Server] DHCP ACK       -> lease confirmed
+[PC6] SUCCESS, allocated IP = 192.168.1.10
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 4
+
+---------------- NETWORK STATUS ----------------
+PC      MAC                 IP address
+PC1     AA:BB:CC:00:01:01   Not Assigned
+PC2     AA:BB:CC:00:02:01   Not Assigned
+PC3     AA:BB:CC:00:03:01   192.168.1.12
+PC4     AA:BB:CC:00:04:01   192.168.1.13
+PC5     AA:BB:CC:00:05:01   Not Assigned
+PC6     AA:BB:CC:00:06:01   192.168.1.10
+
+Pool: 1 free / 4 total
+  192.168.1.10  USED by AA:BB:CC:00:06:01
+  192.168.1.11  FREE
+  192.168.1.12  USED by AA:BB:CC:00:03:01
+  192.168.1.13  USED by AA:BB:CC:00:04:01
+------------------------------------------------
+
+==========================================
+        DHCP SIMULATION - MAIN MENU
+==========================================
+ 1) Test case 1: IP address available
+ 2) Test case 2: No IP address available
+ 3) Connect a new PC to the network
+ 4) Show network status
+ 5) Disconnect a PC (release its IP)
+ 0) Exit
+------------------------------------------
+Your choice: 0
+Simulation finished. Goodbye!
